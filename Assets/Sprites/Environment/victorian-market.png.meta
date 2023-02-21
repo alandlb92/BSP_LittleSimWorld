@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,8 +43,8 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
-  spriteMeshType: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -23241,12 +23241,12 @@ TextureImporter:
       victorian-market_586: -1614938531
       victorian-market_152: 1991536641
       victorian-market_753: 1830620527
-      victorian-market_1007: -1034216071
-      victorian-market_589: -976781223
+      victorian-market_687: -1892893518
+      victorian-market_231: 1982949191
       victorian-market_6: 1461024526
       victorian-market_551: -735133098
-      victorian-market_231: 1982949191
-      victorian-market_687: -1892893518
+      victorian-market_589: -976781223
+      victorian-market_1007: -1034216071
       victorian-market_979: 1652972230
       victorian-market_530: -533879926
       victorian-market_1080: -281745490

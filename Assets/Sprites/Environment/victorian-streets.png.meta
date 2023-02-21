@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -28591,10 +28591,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       victorian-streets_21: 185924549
-      victorian-streets_902: -397027214
-      victorian-streets_1200: 1235796185
-      victorian-streets_1058: 726120142
-      victorian-streets_1089: -1699328504
+      victorian-streets_840: 805268390
+      victorian-streets_274: -1542233558
+      victorian-streets_851: -1918008555
       victorian-streets_149: 256139855
       victorian-streets_24: -1415553125
       victorian-streets_1193: -647418412
@@ -28605,6 +28604,7 @@ TextureImporter:
       victorian-streets_1207: -729384074
       victorian-streets_1213: 159463392
       victorian-streets_730: 1366286830
+      victorian-streets_1089: -1699328504
       victorian-streets_1344: -1035975912
       victorian-streets_942: -1748216050
       victorian-streets_1310: 533683577
@@ -28625,10 +28625,10 @@ TextureImporter:
       victorian-streets_937: 1444360371
       victorian-streets_1326: -1648715801
       victorian-streets_1024: 1982123365
-      victorian-streets_237: -1050661237
       victorian-streets_334: -1460613303
-      victorian-streets_543: 739981849
+      victorian-streets_237: -1050661237
       victorian-streets_732: -1256066333
+      victorian-streets_543: 739981849
       victorian-streets_838: -1079774626
       victorian-streets_1160: 1770389424
       victorian-streets_164: 1514470997
@@ -28742,28 +28742,28 @@ TextureImporter:
       victorian-streets_816: -1295499276
       victorian-streets_368: 1764676930
       victorian-streets_105: 470060516
-      victorian-streets_269: 991162892
       victorian-streets_625: 2010004832
-      victorian-streets_540: 335334495
-      victorian-streets_931: -1599873191
       victorian-streets_906: 903856293
+      victorian-streets_269: 991162892
+      victorian-streets_931: -1599873191
       victorian-streets_121: -281153919
       victorian-streets_963: 1568592098
       victorian-streets_265: 1196164856
       victorian-streets_746: -209443488
+      victorian-streets_540: 335334495
       victorian-streets_542: -2056111141
       victorian-streets_947: -998572117
       victorian-streets_958: 414286593
       victorian-streets_470: -857048097
       victorian-streets_220: 1267255388
       victorian-streets_729: -926622053
-      victorian-streets_901: 1955427329
       victorian-streets_1154: 1400450001
       victorian-streets_972: -1990156319
-      victorian-streets_1037: -1657662786
+      victorian-streets_901: 1955427329
       victorian-streets_962: 427646254
       victorian-streets_1163: 683033660
       victorian-streets_1176: 2030852528
+      victorian-streets_1037: -1657662786
       victorian-streets_263: -1798470191
       victorian-streets_20: -1324748011
       victorian-streets_194: 1745884978
@@ -28908,11 +28908,11 @@ TextureImporter:
       victorian-streets_327: 1046072446
       victorian-streets_694: 2141792681
       victorian-streets_306: 276252917
-      victorian-streets_171: -1150673718
-      victorian-streets_244: -148356352
       victorian-streets_706: 728199807
-      victorian-streets_441: 944341343
+      victorian-streets_244: -148356352
       victorian-streets_1328: 990646647
+      victorian-streets_441: 944341343
+      victorian-streets_171: -1150673718
       victorian-streets_809: 638626143
       victorian-streets_855: 1234988461
       victorian-streets_1032: 1584928538
@@ -28924,13 +28924,13 @@ TextureImporter:
       victorian-streets_813: 1290325700
       victorian-streets_578: -1482309041
       victorian-streets_77: 1396849189
-      victorian-streets_548: 1335956517
-      victorian-streets_282: 744608522
       victorian-streets_1011: 782719802
+      victorian-streets_282: 744608522
       victorian-streets_1266: -1937939957
+      victorian-streets_548: 1335956517
+      victorian-streets_1268: 1353253313
       victorian-streets_765: -1570604517
       victorian-streets_56: -477617725
-      victorian-streets_1268: 1353253313
       victorian-streets_203: 893767084
       victorian-streets_104: -1055180757
       victorian-streets_757: -1897608227
@@ -29933,18 +29933,18 @@ TextureImporter:
       victorian-streets_943: 1401745908
       victorian-streets_1353: -1976483389
       victorian-streets_202: -1229517457
+      victorian-streets_902: -397027214
       victorian-streets_292: 2026317735
       victorian-streets_321: -1943327191
-      victorian-streets_44: -1329927318
       victorian-streets_653: -590640708
-      victorian-streets_274: -1542233558
-      victorian-streets_210: -19517189
-      victorian-streets_66: 553764037
-      victorian-streets_99: 1454060361
+      victorian-streets_44: -1329927318
       victorian-streets_683: -1667209661
-      victorian-streets_840: 805268390
+      victorian-streets_99: 1454060361
+      victorian-streets_66: 553764037
+      victorian-streets_210: -19517189
+      victorian-streets_1200: 1235796185
       victorian-streets_973: 1772875245
-      victorian-streets_851: -1918008555
+      victorian-streets_1058: 726120142
       victorian-streets_612: 636425176
   spritePackingTag: 
   pSDRemoveMatte: 0

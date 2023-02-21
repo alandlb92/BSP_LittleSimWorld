@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -23237,12 +23237,12 @@ TextureImporter:
       victorian-market_586: -1614938531
       victorian-market_152: 1991536641
       victorian-market_753: 1830620527
-      victorian-market_687: -1892893518
-      victorian-market_231: 1982949191
+      victorian-market_1007: -1034216071
+      victorian-market_589: -976781223
       victorian-market_6: 1461024526
       victorian-market_551: -735133098
-      victorian-market_589: -976781223
-      victorian-market_1007: -1034216071
+      victorian-market_231: 1982949191
+      victorian-market_687: -1892893518
       victorian-market_979: 1652972230
       victorian-market_530: -533879926
       victorian-market_1080: -281745490
@@ -23292,10 +23292,10 @@ TextureImporter:
       victorian-market_866: 1926149782
       victorian-market_807: -738550594
       victorian-market_322: -1109921822
-      victorian-market_698: 1026774576
+      victorian-market_774: 1675490680
       victorian-market_137: 1101019703
       victorian-market_178: 1393935531
-      victorian-market_774: 1675490680
+      victorian-market_698: 1026774576
       victorian-market_1010: -926765653
       victorian-market_1036: 1706614755
       victorian-market_528: 917932622
@@ -23478,13 +23478,13 @@ TextureImporter:
       victorian-market_834: -880861203
       victorian-market_1017: -1102947689
       victorian-market_647: -2016864914
+      victorian-market_811: 1915214735
       victorian-market_565: 1346223450
       victorian-market_192: -2117630795
       victorian-market_634: -2045314657
       victorian-market_227: -543283726
       victorian-market_51: 1677154322
       victorian-market_1068: -1429927538
-      victorian-market_811: 1915214735
       victorian-market_1074: 1787516617
       victorian-market_469: -953255655
       victorian-market_605: -2038425853
@@ -23518,23 +23518,23 @@ TextureImporter:
       victorian-market_610: -297866938
       victorian-market_79: -2031101400
       victorian-market_135: -95357052
-      victorian-market_412: 272797278
       victorian-market_520: 548171659
+      victorian-market_574: 1757417025
       victorian-market_752: -514892277
       victorian-market_210: -1507335993
       victorian-market_420: 393568117
       victorian-market_727: -1533897556
-      victorian-market_574: 1757417025
-      victorian-market_16: -1928833109
-      victorian-market_814: -1473102031
-      victorian-market_939: 318484094
-      victorian-market_847: 1691614261
       victorian-market_1076: 2020897063
+      victorian-market_412: 272797278
+      victorian-market_16: -1928833109
+      victorian-market_939: 318484094
+      victorian-market_814: -1473102031
       victorian-market_1082: -940970427
       victorian-market_826: 814578256
       victorian-market_848: 685428857
       victorian-market_523: 461226754
       victorian-market_1086: -1746301546
+      victorian-market_847: 1691614261
       victorian-market_309: -1692641018
       victorian-market_422: 2071389503
       victorian-market_708: 1189953947
@@ -23547,11 +23547,11 @@ TextureImporter:
       victorian-market_849: -457560329
       victorian-market_336: 1215204248
       victorian-market_787: 932527917
+      victorian-market_915: 1244599735
       victorian-market_665: -1716502138
       victorian-market_331: 181483805
-      victorian-market_581: 94601486
       victorian-market_632: 1932810452
-      victorian-market_915: 1244599735
+      victorian-market_581: 94601486
       victorian-market_70: -1679900046
       victorian-market_973: -838300795
       victorian-market_1038: -1148429076
@@ -23758,13 +23758,13 @@ TextureImporter:
       victorian-market_320: -667223962
       victorian-market_151: -349964754
       victorian-market_166: 1372285213
-      victorian-market_214: -1027463901
       victorian-market_786: 1796327541
-      victorian-market_406: 1522599417
+      victorian-market_214: -1027463901
       victorian-market_131: -345459568
       victorian-market_292: 488005261
       victorian-market_697: -510808689
       victorian-market_863: 1212678176
+      victorian-market_406: 1522599417
       victorian-market_430: -1293937836
       victorian-market_728: -1996201119
       victorian-market_23: 147152172
@@ -23781,10 +23781,10 @@ TextureImporter:
       victorian-market_148: -552020827
       victorian-market_710: 584409368
       victorian-market_809: -434049713
-      victorian-market_367: 1018668154
+      victorian-market_604: 1250282996
       victorian-market_603: 1257246341
       victorian-market_975: -693458414
-      victorian-market_604: 1250282996
+      victorian-market_367: 1018668154
       victorian-market_307: -1860626220
       victorian-market_736: 77297949
       victorian-market_677: 1621567786
@@ -23793,11 +23793,11 @@ TextureImporter:
       victorian-market_517: 449960252
       victorian-market_532: -1249961561
       victorian-market_318: -834221142
-      victorian-market_337: -1397362886
       victorian-market_756: -2028655087
-      victorian-market_673: -1556342036
+      victorian-market_337: -1397362886
       victorian-market_255: -795220801
       victorian-market_375: 271706178
+      victorian-market_673: -1556342036
       victorian-market_226: 1679385293
       victorian-market_582: 597678537
       victorian-market_725: 1358817167
@@ -23831,8 +23831,8 @@ TextureImporter:
       victorian-market_568: 1255885825
       victorian-market_976: -1228400437
       victorian-market_490: -634663726
+      victorian-market_580: 1483520034
       victorian-market_204: -429338813
-      victorian-market_351: -1984532537
       victorian-market_563: -1732538466
       victorian-market_557: 1050323563
       victorian-market_631: -1507320872
@@ -23840,9 +23840,9 @@ TextureImporter:
       victorian-market_502: 83747878
       victorian-market_635: 409146229
       victorian-market_981: -572888127
-      victorian-market_580: 1483520034
-      victorian-market_1075: 372820422
       victorian-market_893: -601821367
+      victorian-market_351: -1984532537
+      victorian-market_1075: 372820422
       victorian-market_597: 294997538
       victorian-market_651: -1297774575
       victorian-market_345: 1898545402
@@ -23881,8 +23881,8 @@ TextureImporter:
       victorian-market_12: 482905592
       victorian-market_119: 505579637
       victorian-market_766: 780313928
-      victorian-market_937: -842800750
       victorian-market_1088: 1929635839
+      victorian-market_937: -842800750
       victorian-market_142: -1920648075
       victorian-market_577: 2001929693
       victorian-market_595: 997981496

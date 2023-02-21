@@ -129,6 +129,10 @@ PrefabInstance:
       propertyPath: _input
       value: 
       objectReference: {fileID: 6705031835751797732}
+    - target: {fileID: 4733614696027703669, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
+      propertyPath: PlayerHud_Reference
+      value: 
+      objectReference: {fileID: 649541393137860176, guid: fa027c46ecaa1de43a1f70f8af02486c, type: 3}
     - target: {fileID: 4906737427978551263, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: 0.045410156

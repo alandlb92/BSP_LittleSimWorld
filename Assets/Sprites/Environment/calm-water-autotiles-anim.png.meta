@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -4077,9 +4077,9 @@ TextureImporter:
       calm-water-autotiles-anim_8: 1916165694
       calm-water-autotiles-anim_45: 1610703352
       calm-water-autotiles-anim_157: 725013922
+      calm-water-autotiles-anim_174: 464886692
       calm-water-autotiles-anim_171: -520140598
       calm-water-autotiles-anim_149: -1341871305
-      calm-water-autotiles-anim_174: 464886692
       calm-water-autotiles-anim_78: 1153629792
       calm-water-autotiles-anim_23: 808802369
       calm-water-autotiles-anim_153: -69067422
@@ -4217,8 +4217,8 @@ TextureImporter:
       calm-water-autotiles-anim_187: 113247518
       calm-water-autotiles-anim_130: -567218093
       calm-water-autotiles-anim_63: 274520319
-      calm-water-autotiles-anim_9: -1689800722
       calm-water-autotiles-anim_1: 1515936901
+      calm-water-autotiles-anim_9: -1689800722
       calm-water-autotiles-anim_160: 1305154945
       calm-water-autotiles-anim_29: -1380487349
       calm-water-autotiles-anim_67: 253043223

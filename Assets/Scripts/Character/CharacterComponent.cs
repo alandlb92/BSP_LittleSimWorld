@@ -8,6 +8,10 @@ public class CharacterComponent : MonoBehaviour
     [SerializeField] private PlayerHUD PlayerHud_Reference;
 
     [Space]
+    [Header("Interaction")]
+    [SerializeField] private float interactionDistance;
+
+    [Space]
     [Header("Physics")]
     [SerializeField] private float velocityMultiply;
     [SerializeField] private Rigidbody2D rBody;
@@ -22,7 +26,10 @@ public class CharacterComponent : MonoBehaviour
     private CharacterAnimationController _animationController;
     private CharacterMovementController _movementController;
     private CharacterInventoryController _inventoryController;
+    private PlayerInteractionController _interactionController;
     private PlayerHUD _Hud;
+
+    public ICharacterInventory IInvetory => _inventoryController;
 
     private void Start()
     {
@@ -41,12 +48,41 @@ public class CharacterComponent : MonoBehaviour
         if (PlayerHud_Reference)
             _Hud = Instantiate(PlayerHud_Reference);
 
-        _input.SetUp(_movementController);
         _inventoryController = new CharacterInventoryController(_Hud);
+
+        _input?.SetUp(_movementController);
+
+        if (_input is PlayerInput)
+            _interactionController = new PlayerInteractionController(interactionDistance);
+
     }
 
     void Update()
     {
         _animationController.Update();
+        _interactionController?.Update(transform, GetBodyDirection());
+    }
+
+    public Vector3 GetBodyDirection()
+    {
+        if (bodyBack.enabled)
+            return Vector2.up;
+        else if (bodyFront.enabled)
+            return Vector2.down;
+        else if (bodyLeft.enabled && bodyLeft.flipX)
+            return Vector2.left;
+        else
+            return Vector2.right;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (bodyBack != null &&
+            bodyFront != null &&
+            bodyLeft != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, transform.position + GetBodyDirection() * interactionDistance);
+        }
     }
 }

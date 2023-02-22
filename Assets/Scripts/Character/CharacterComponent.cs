@@ -23,6 +23,7 @@ public class CharacterComponent : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private InputBase _input;
 
+    private CharacterCustomizeController _customizeController;
     private CharacterAnimationController _animationController;
     private CharacterMovementController _movementController;
     private CharacterInventoryController _inventoryController;
@@ -30,8 +31,9 @@ public class CharacterComponent : MonoBehaviour
     private PlayerHUD _Hud;
 
     public ICharacterInventory IInvetory => _inventoryController;
+    public ICustomizeCharacter ICustomize => _customizeController;
 
-    private void Start()
+    private void Awake()
     {
 
         _movementController = new CharacterMovementController(rBody, velocityMultiply);
@@ -47,6 +49,13 @@ public class CharacterComponent : MonoBehaviour
 
         if (PlayerHud_Reference)
             _Hud = Instantiate(PlayerHud_Reference);
+
+        _customizeController = new CharacterCustomizeController(new CharacterCustomizeController.Configuration
+        {
+            _bodyBack = bodyBack,
+            _bodyFront = bodyFront,
+            _bodyLeft = bodyLeft
+        });
 
         _inventoryController = new CharacterInventoryController(_Hud);
 

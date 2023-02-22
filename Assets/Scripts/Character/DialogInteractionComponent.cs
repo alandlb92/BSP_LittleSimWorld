@@ -13,6 +13,7 @@ public class DialogInteractionComponent : MonoBehaviour, IInteract
     public void Interact(CharacterComponent characterComponent)
     {
         _interactingCharacter = characterComponent;
+        Debug.Log("CALL DIALOG INTERACTION");
     }
 
     public void GiveMoneyToOther(int amount)

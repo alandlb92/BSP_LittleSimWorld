@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,10 +28,17 @@ public class PlayerInput : InputBase
 
     private InputAxisVectorInfo _inputAxis;
 
+    public event Action OnInteract;
+
     public void Update()
     {
         SetInputInfo();
-        _movementController.Move(_inputAxis.GetValue());
+        _iMovement.Move(_inputAxis.GetValue());
+
+        if(Input.GetButtonDown("Submit"))
+        {
+            OnInteract?.Invoke();
+        }
     }
 
     private void SetInputInfo()

@@ -1,10 +1,10 @@
 using UnityEngine;
 public class InputBase : MonoBehaviour
 {
-    protected IMovement _movementController;
+    protected IMovement _iMovement;
 
     public void SetUp(IMovement movementController)
     {
-        _movementController = movementController;
+        _iMovement = movementController;
     }
 }

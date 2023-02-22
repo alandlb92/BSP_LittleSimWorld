@@ -53,7 +53,10 @@ public class CharacterComponent : MonoBehaviour
         _input?.SetUp(_movementController);
 
         if (_input is PlayerInput)
+        {
             _interactionController = new PlayerInteractionController(interactionDistance);
+            (_input as PlayerInput).OnInteract += () => { _interactionController.Interactable?.Interact(this); };
+        }
 
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterInventoryController
+public class CharacterInventoryController : ICharacterInventory
 {
     private CharacterInventoryData _data;
     private IPlayerHUD _HUD;

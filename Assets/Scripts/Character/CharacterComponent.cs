@@ -20,6 +20,7 @@ public class CharacterComponent : MonoBehaviour
     [SerializeField] private SpriteRenderer bodyFront;
     [SerializeField] private SpriteRenderer bodyLeft;
     [SerializeField] private SpriteRenderer bodyBack;
+    [SerializeField] private SpriteRenderer face;
     [SerializeField] private Animator animator;
     [SerializeField] private InputBase _input;
 
@@ -54,7 +55,8 @@ public class CharacterComponent : MonoBehaviour
         {
             _bodyBack = bodyBack,
             _bodyFront = bodyFront,
-            _bodyLeft = bodyLeft
+            _bodyLeft = bodyLeft,
+            _face = face
         });
 
         _inventoryController = new CharacterInventoryController(_Hud);
@@ -66,7 +68,7 @@ public class CharacterComponent : MonoBehaviour
             _interactionController = new PlayerInteractionController(interactionDistance);
             (_input as PlayerInput).OnInteract += () => { _interactionController.Interactable?.Interact(this); };
         }
-    }
+    }    
 
     public void InitializePlayer(Transform hudParent, Vector3 startPosition)
     {

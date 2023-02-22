@@ -31,9 +31,9 @@ public class CharacterAnimationController
         if (references._rigidbody.velocity.magnitude == 0)
             return;
 
-        references._bodyBack.enabled = references._rigidbody.velocity.y > 0 && references._rigidbody.velocity.x == 0;
-        references._bodyFront.enabled = references._rigidbody.velocity.y < 0 && references._rigidbody.velocity.x == 0;
-        references._bodyLeft.enabled = references._rigidbody.velocity.x != 0;
+        references._bodyBack.gameObject.SetActive(references._rigidbody.velocity.y > 0 && references._rigidbody.velocity.x == 0);
+        references._bodyFront.gameObject.SetActive(references._rigidbody.velocity.y < 0 && references._rigidbody.velocity.x == 0);
+        references._bodyLeft.gameObject.SetActive(references._rigidbody.velocity.x != 0);
         references._bodyLeft.flipX = references._rigidbody.velocity.x < 0;
     }
 }

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SkinToneCustomizeUI : MonoBehaviour
+public class EyeColorCustomizePanel : MonoBehaviour
 {
     [SerializeField] private SelectableButton ChoseButtonTemplate;
     [SerializeField] private SelectableButtonGroup OptionsContainer;
 
     public void Initialize(ICustomizeCharacter customizeCharacter)
     {
-        SkinToneOption[] toneOptions = Resources.LoadAll<SkinToneOption>("SkinTones");        
+        HSVModifiersValues[] toneOptions = Resources.LoadAll<HSVModifiersValues>("EyeColors");        
 
         foreach (var option in toneOptions)
         {
@@ -19,7 +19,7 @@ public class SkinToneCustomizeUI : MonoBehaviour
                 Debug.Log("Call button");
                 Debug.Log(customizeCharacter == null);
             });
-            button.AddListener(() => { customizeCharacter?.ChangeSkinTone(option.h, option.s, option.v); });
+            button.AddListener(() => { customizeCharacter?.ChangeEyeColor(option.h, option.s, option.v); });
             button.SetColor(option.toneThunb);
             OptionsContainer.AddToGroup(button);
         }

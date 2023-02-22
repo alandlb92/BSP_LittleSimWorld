@@ -5,4 +5,5 @@ using UnityEngine;
 public interface ICustomizeCharacter
 {
     void ChangeSkinTone(float h, float s, float v);
+    void ChangeEyeColor(float h, float s, float v);
 }

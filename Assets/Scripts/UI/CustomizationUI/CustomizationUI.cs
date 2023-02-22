@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CustomizationUI : MonoBehaviour
 {
-    [SerializeField] public SkinToneCustomizeUI skinToneCustomize;
+    [SerializeField] public SkinToneCustomizePanel skinToneCustomizePanel;
+    [SerializeField] public EyeColorCustomizePanel eyeColorCustomizePanel;
 
     public void Configure(ICustomizeCharacter iCustomizeCharacter)
     {
-        skinToneCustomize.Initialize(iCustomizeCharacter);
+        skinToneCustomizePanel.Initialize(iCustomizeCharacter);
+        eyeColorCustomizePanel.Initialize(iCustomizeCharacter);
     }
 }

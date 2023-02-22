@@ -57,6 +57,21 @@ public class CharacterComponent : MonoBehaviour
             _interactionController = new PlayerInteractionController(interactionDistance);
             (_input as PlayerInput).OnInteract += () => { _interactionController.Interactable?.Interact(this); };
         }
+    }
+
+    public void InitializePlayer(Transform hudParent, Vector3 startPosition)
+    {
+        SetHUDParent(hudParent);
+        transform.position = startPosition;
+    }
+
+    private void SetHUDParent(Transform mainCanvas)
+    {
+        if (_Hud != null)
+        {
+            if (mainCanvas != null)
+                _Hud.transform.parent = mainCanvas;
+        }
 
     }
 

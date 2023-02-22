@@ -133,9 +133,13 @@ PrefabInstance:
       propertyPath: PlayerHud_Reference
       value: 
       objectReference: {fileID: 649541393137860176, guid: fa027c46ecaa1de43a1f70f8af02486c, type: 3}
+    - target: {fileID: 4733614696027703669, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
+      propertyPath: interactionDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4906737427978551263, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.045410156
+      value: 0.045410037
       objectReference: {fileID: 0}
     - target: {fileID: 4906737427978551263, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_Bounds.m_Center.y
@@ -147,11 +151,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906737427978551263, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 1.9921644
+      value: 1.9921641
       objectReference: {fileID: 0}
     - target: {fileID: 4906737427993559288, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.17547518
+      value: 0.17547524
       objectReference: {fileID: 0}
     - target: {fileID: 4906737427993559288, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -162,12 +166,16 @@ PrefabInstance:
       value: 2.0394979
       objectReference: {fileID: 0}
     - target: {fileID: 4906737428143702033, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: -0.17350411
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906737428143702033, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 1.3293971
+      value: 1.329397
       objectReference: {fileID: 0}
     - target: {fileID: 4906737428143702033, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 1.9819766
+      value: 1.9819767
       objectReference: {fileID: 0}
     - target: {fileID: 4906737428837577928, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_RootOrder
@@ -175,11 +183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906737428837577928, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 4906737428837577928, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.33
       objectReference: {fileID: 0}
     - target: {fileID: 4906737428837577928, guid: 4a5abb5e243bb8049ae31ea273ec2ae8, type: 3}
       propertyPath: m_LocalPosition.z

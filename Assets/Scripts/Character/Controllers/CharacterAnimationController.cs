@@ -34,6 +34,6 @@ public class CharacterAnimationController
         references._bodyBack.gameObject.SetActive(references._rigidbody.velocity.y > 0 && references._rigidbody.velocity.x == 0);
         references._bodyFront.gameObject.SetActive(references._rigidbody.velocity.y < 0 && references._rigidbody.velocity.x == 0);
         references._bodyLeft.gameObject.SetActive(references._rigidbody.velocity.x != 0);
-        references._bodyLeft.flipX = references._rigidbody.velocity.x < 0;
+        references._bodyLeft.transform.rotation = Quaternion.Euler(new Vector3(0, references._rigidbody.velocity.x < 0 ? 180 : 0));
     }
 }

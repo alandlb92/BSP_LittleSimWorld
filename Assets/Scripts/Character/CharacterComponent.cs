@@ -20,7 +20,11 @@ public class CharacterComponent : MonoBehaviour
     [SerializeField] private SpriteRenderer bodyFront;
     [SerializeField] private SpriteRenderer bodyLeft;
     [SerializeField] private SpriteRenderer bodyBack;
-    [SerializeField] private SpriteRenderer face;
+    [SerializeField] private SpriteRenderer hairFront;
+    [SerializeField] private SpriteRenderer hairLeft;
+    [SerializeField] private SpriteRenderer hairBack;
+    [SerializeField] private SpriteRenderer faceFront;
+    [SerializeField] private SpriteRenderer faceLeft;
     [SerializeField] private Animator animator;
     [SerializeField] private InputBase _input;
 
@@ -56,7 +60,11 @@ public class CharacterComponent : MonoBehaviour
             _bodyBack = bodyBack,
             _bodyFront = bodyFront,
             _bodyLeft = bodyLeft,
-            _face = face
+            _hairBack = hairBack,
+            _hairFront = hairFront,
+            _hairLeft = hairLeft,
+            _faceFront = faceFront,
+            _faceLeft = faceLeft
         });
 
         _inventoryController = new CharacterInventoryController(_Hud);

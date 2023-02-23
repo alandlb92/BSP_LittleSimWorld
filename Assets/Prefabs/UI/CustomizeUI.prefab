@@ -396,6 +396,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skinToneCustomizePanel: {fileID: 3805603306298285830}
   eyeColorCustomizePanel: {fileID: 4345397895196801867}
+  hairColorCustomizePanel: {fileID: 8335103528218185317}
+  hairStyleCustomizePanel: {fileID: 7995611415322311030}
 --- !u!1 &3805603305866789114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,6 +1119,7 @@ GameObject:
   - component: {fileID: 2136738522346031286}
   - component: {fileID: 1990734858211510828}
   - component: {fileID: 5003204053566833207}
+  - component: {fileID: 7995611415322311030}
   m_Layer: 5
   m_Name: HairStyle
   m_TagString: Untagged
@@ -1184,6 +1187,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7995611415322311030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282462034984234680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074a3d629d8b0fd498d9a7ba5a283f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChoseButtonTemplate: {fileID: 5070520359397580750, guid: 00ecf22ecb055014491daa69f2cb0eb5, type: 3}
+  OptionsContainer: {fileID: 6755432216801011427}
 --- !u!1 &8374941565896346262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,6 +1440,7 @@ GameObject:
   - component: {fileID: 8503833148686585306}
   - component: {fileID: 2784376809585614489}
   - component: {fileID: 3116169378429737514}
+  - component: {fileID: 8335103528218185317}
   m_Layer: 5
   m_Name: HairColor
   m_TagString: Untagged
@@ -1490,6 +1508,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8335103528218185317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8510403463869053129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1770b1e4f7276242866a92d714c33db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChoseButtonTemplate: {fileID: 5070520359397580750, guid: 00ecf22ecb055014491daa69f2cb0eb5, type: 3}
+  OptionsContainer: {fileID: 6008398506805255340}
 --- !u!1 &8792229902859473827
 GameObject:
   m_ObjectHideFlags: 0

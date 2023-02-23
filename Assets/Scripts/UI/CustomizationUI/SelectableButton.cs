@@ -37,4 +37,9 @@ public class SelectableButton : MonoBehaviour
     {
         button.image.color = color;
     }
+
+    public void SetSprite(Sprite thumb)
+    {
+        button.image.sprite = thumb;
+    }
 }

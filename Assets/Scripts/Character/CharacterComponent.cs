@@ -15,29 +15,18 @@ public class CharacterComponent : MonoBehaviour
     [Header("Physics")]
     [SerializeField] private float velocityMultiply;
     [SerializeField] private Rigidbody2D rBody;
+
     [Space]
     [Header("Animation")]
-    [SerializeField] private SpriteRenderer bodyFront;
-    [SerializeField] private SpriteRenderer bodyLeft;
-    [SerializeField] private SpriteRenderer bodyBack;
-    [SerializeField] private SpriteRenderer hairFront;
-    [SerializeField] private SpriteRenderer hairLeft;
-    [SerializeField] private SpriteRenderer hairBack;
-    [SerializeField] private SpriteRenderer faceFront;
-    [SerializeField] private SpriteRenderer faceLeft;
     [SerializeField] private Animator animator;
     [SerializeField] private InputBase _input;
+    [SerializeField] private GameObject bodyFront;
+    [SerializeField] private GameObject bodySide;
+    [SerializeField] private GameObject bodyBack;
 
-    [Header("Custon-Pants")]
-    [SerializeField] private SpriteRenderer pantBodyLegBack;
-    [SerializeField] private SpriteRenderer pantLeftLegBack;
-    [SerializeField] private SpriteRenderer pantRightLegBack;
-    [SerializeField] private SpriteRenderer pantBodyLegFront;
-    [SerializeField] private SpriteRenderer pantLeftLegFront;
-    [SerializeField] private SpriteRenderer pantRightLegFront;
-    [SerializeField] private SpriteRenderer pantBodyLegLeft;
-    [SerializeField] private SpriteRenderer pantLeftLegLeft;
-    [SerializeField] private SpriteRenderer pantRightLegLeft;
+    [Space]
+    [SerializeField] private CustomizableSpritesContainer _customizableSprites;
+
 
 
     private CharacterCustomizeController _customizeController;
@@ -60,40 +49,16 @@ public class CharacterComponent : MonoBehaviour
                 _animator = animator,
                 _bodyBack = bodyBack,
                 _bodyFront = bodyFront,
-                _bodyLeft = bodyLeft,
+                _bodySide = bodySide,
                 _rigidbody = rBody
             });
 
         if (PlayerHud_Reference)
             _Hud = Instantiate(PlayerHud_Reference);
 
-        _customizeController = new CharacterCustomizeController(new CharacterCustomizeController.Configuration
-        {
-            _bodyBack = bodyBack,
-            _bodyFront = bodyFront,
-            _bodyLeft = bodyLeft,
-            _hairBack = hairBack,
-            _hairFront = hairFront,
-            _hairLeft = hairLeft,
-            _faceFront = faceFront,
-            _faceLeft = faceLeft,
-
-            _pantBodyLegBack = pantBodyLegBack,
-            _pantLeftLegBack = pantLeftLegBack,
-            _pantRightLegBack = pantRightLegBack,
-
-            _pantBodyLegFront = pantBodyLegFront,
-            _pantLeftLegFront = pantLeftLegFront,
-            _pantRightLegFront = pantRightLegFront,
-
-            _pantBodyLegLeft = pantBodyLegLeft,
-            _pantLeftLegLeft = pantLeftLegLeft,
-            _pantRightLegLeft = pantRightLegLeft
-
-        });
+        _customizeController = new CharacterCustomizeController(_customizableSprites);
 
         _inventoryController = new CharacterInventoryController(_Hud);
-
         _input?.SetUp(_movementController);
 
         if (_input is PlayerInput)
@@ -127,11 +92,11 @@ public class CharacterComponent : MonoBehaviour
 
     public Vector3 GetBodyDirection()
     {
-        if (bodyBack.enabled)
+        if (bodyBack.activeSelf)
             return Vector2.up;
-        else if (bodyFront.enabled)
+        else if (bodyFront.activeSelf)
             return Vector2.down;
-        else if (bodyLeft.enabled && bodyLeft.flipX)
+        else if (bodySide.activeSelf && bodySide.transform.rotation.y > 0)
             return Vector2.left;
         else
             return Vector2.right;
@@ -141,7 +106,7 @@ public class CharacterComponent : MonoBehaviour
     {
         if (bodyBack != null &&
             bodyFront != null &&
-            bodyLeft != null)
+            bodySide != null)
         {
             Gizmos.color = Color.red;
             Gizmos.DrawLine(transform.position, transform.position + GetBodyDirection() * interactionDistance);

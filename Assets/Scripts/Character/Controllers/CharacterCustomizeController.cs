@@ -4,77 +4,60 @@ using UnityEngine;
 
 public class CharacterCustomizeController : ICustomizeCharacter
 {
-    public struct Configuration
+
+    private CustomizableSpritesContainer _customizableSprites;
+
+    public CharacterCustomizeController(CustomizableSpritesContainer customizableSprites)
     {
-        public SpriteRenderer _bodyFront;
-        public SpriteRenderer _bodyLeft;
-        public SpriteRenderer _bodyBack;
-        public SpriteRenderer _hairFront;
-        public SpriteRenderer _hairLeft;
-        public SpriteRenderer _hairBack;
-
-
-        public SpriteRenderer _pantRightLegFront;
-        public SpriteRenderer _pantRightLegBack;
-        public SpriteRenderer _pantRightLegLeft;
-
-        public SpriteRenderer _pantLeftLegFront;
-        public SpriteRenderer _pantLeftLegBack;
-        public SpriteRenderer _pantLeftLegLeft;
-
-        public SpriteRenderer _pantBodyLegFront;
-        public SpriteRenderer _pantBodyLegBack;
-        public SpriteRenderer _pantBodyLegLeft;
-
-        public SpriteRenderer _faceFront;
-        public SpriteRenderer _faceLeft;
-    }
-
-    private Configuration references;
-
-    public CharacterCustomizeController(Configuration configuration)
-    {
-        references = configuration;
+        _customizableSprites = customizableSprites;
     }
 
     public void ChangeSkinTone(float h, float s, float v)
     {
-        references._bodyFront.material.SetHUEFloatValues(h, s, v);
-        references._bodyLeft.material.SetHUEFloatValues(h, s, v);
-        references._bodyBack.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.bodyFront.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.headFront.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.leftArmFront.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.rightArmFront.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.legsFront.material.SetHUEFloatValues(h, s, v);
+
+        _customizableSprites.bodySide.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.HeadSide.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.leftArmSide.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.rightArmSide.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.leftLegSide.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.rightLegSide.material.SetHUEFloatValues(h, s, v);
+
+        _customizableSprites.bodyBack.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.headBack.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.leftArmBack.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.rightArmBack.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.legsBack.material.SetHUEFloatValues(h, s, v);
     }
     public void ChangeEyeColor(float h, float s, float v)
     {
-        references._faceFront.material.SetHUEFloatValues(h, s, v);
-        references._faceLeft.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.faceFront.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.faceSide.material.SetHUEFloatValues(h, s, v);
     }
 
     public void ChangeHairColor(float h, float s, float v)
     {
-        references._hairFront.material.SetHUEFloatValues(h, s, v);
-        references._hairLeft.material.SetHUEFloatValues(h, s, v);
-        references._hairBack.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.hairFront.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.hairSide.material.SetHUEFloatValues(h, s, v);
+        _customizableSprites.hairBack.material.SetHUEFloatValues(h, s, v);
     }
 
     public void ChangeHairStyle(HairStyleItem hairStyle)
     {
-        references._hairFront.sprite = hairStyle.front;
-        references._hairLeft.sprite = hairStyle.left;
-        references._hairBack.sprite = hairStyle.back;
+        _customizableSprites.hairFront.sprite = hairStyle.front;
+        _customizableSprites.hairSide.sprite = hairStyle.side;
+        _customizableSprites.hairBack.sprite = hairStyle.back;
     }
 
     public void ChangePants(PantsItem pants)
     {
-        references._pantRightLegFront.sprite = pants.front;
-        references._pantLeftLegFront.sprite = pants.front;
-        references._pantBodyLegFront.sprite = pants.front;
-
-        references._pantRightLegLeft.sprite = pants.left;
-        references._pantLeftLegLeft.sprite = pants.left;
-        references._pantBodyLegLeft.sprite = pants.left;
-
-        references._pantRightLegBack.sprite = pants.back;
-        references._pantLeftLegBack.sprite = pants.back;
-        references._pantBodyLegBack.sprite = pants.back;
+        _customizableSprites.pantFront.sprite = pants.front;
+        _customizableSprites.pantLeftLegSide.sprite = pants.side;
+        _customizableSprites.pantRightLegSide.sprite = pants.side;
+        _customizableSprites.pantsBack.sprite = pants.back;
     }
 }

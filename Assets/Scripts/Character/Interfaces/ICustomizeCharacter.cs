@@ -7,5 +7,6 @@ public interface ICustomizeCharacter
     void ChangeHairColor(float h, float s, float v);
     void ChangeSkinTone(float h, float s, float v);
     void ChangeEyeColor(float h, float s, float v);
-    void ChangeStyle(HairStyleItem hairStyle);
+    void ChangeHairStyle(HairStyleItem hairStyle);
+    void ChangePants(PantsItem pants);
 }

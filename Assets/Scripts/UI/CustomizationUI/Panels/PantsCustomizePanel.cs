@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HairStyleCustomizePanel : MonoBehaviour
+public class PantsCustomizePanel : MonoBehaviour
 {
     [SerializeField] private SelectableButton ChoseButtonTemplate;
     [SerializeField] private SelectableButtonGroup OptionsContainer;
 
     public void Initialize(ICustomizeCharacter customizeCharacter)
     {
-        HairStyleItem[] toneOptions = Resources.LoadAll<HairStyleItem>("HairStyle");        
+        PantsItem[] toneOptions = Resources.LoadAll<PantsItem>("Pants");        
 
         foreach (var option in toneOptions)
         {
@@ -19,7 +19,7 @@ public class HairStyleCustomizePanel : MonoBehaviour
                 Debug.Log("Call button");
                 Debug.Log(customizeCharacter == null);
             });
-            button.AddListener(() => { customizeCharacter?.ChangeHairStyle(option); });
+            button.AddListener(() => { customizeCharacter?.ChangePants(option); });
             button.SetSprite(option.thumb);
             OptionsContainer.AddToGroup(button);
         }

@@ -28,6 +28,18 @@ public class CharacterComponent : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private InputBase _input;
 
+    [Header("Custon-Pants")]
+    [SerializeField] private SpriteRenderer pantBodyLegBack;
+    [SerializeField] private SpriteRenderer pantLeftLegBack;
+    [SerializeField] private SpriteRenderer pantRightLegBack;
+    [SerializeField] private SpriteRenderer pantBodyLegFront;
+    [SerializeField] private SpriteRenderer pantLeftLegFront;
+    [SerializeField] private SpriteRenderer pantRightLegFront;
+    [SerializeField] private SpriteRenderer pantBodyLegLeft;
+    [SerializeField] private SpriteRenderer pantLeftLegLeft;
+    [SerializeField] private SpriteRenderer pantRightLegLeft;
+
+
     private CharacterCustomizeController _customizeController;
     private CharacterAnimationController _animationController;
     private CharacterMovementController _movementController;
@@ -64,7 +76,20 @@ public class CharacterComponent : MonoBehaviour
             _hairFront = hairFront,
             _hairLeft = hairLeft,
             _faceFront = faceFront,
-            _faceLeft = faceLeft
+            _faceLeft = faceLeft,
+
+            _pantBodyLegBack = pantBodyLegBack,
+            _pantLeftLegBack = pantLeftLegBack,
+            _pantRightLegBack = pantRightLegBack,
+
+            _pantBodyLegFront = pantBodyLegFront,
+            _pantLeftLegFront = pantLeftLegFront,
+            _pantRightLegFront = pantRightLegFront,
+
+            _pantBodyLegLeft = pantBodyLegLeft,
+            _pantLeftLegLeft = pantLeftLegLeft,
+            _pantRightLegLeft = pantRightLegLeft
+
         });
 
         _inventoryController = new CharacterInventoryController(_Hud);
@@ -76,7 +101,7 @@ public class CharacterComponent : MonoBehaviour
             _interactionController = new PlayerInteractionController(interactionDistance);
             (_input as PlayerInput).OnInteract += () => { _interactionController.Interactable?.Interact(this); };
         }
-    }    
+    }
 
     public void InitializePlayer(Transform hudParent, Vector3 startPosition)
     {

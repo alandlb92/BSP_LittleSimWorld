@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdafda0fec8c2b443b33e16e90c4a05b, type: 3}
+  m_Name: PantsItem2
+  m_EditorClassIdentifier: 
+  thumb: {fileID: 21300000, guid: f0174ecaf5de2294c8e86547549e6907, type: 3}
+  front: {fileID: 21300000, guid: f0174ecaf5de2294c8e86547549e6907, type: 3}
+  left: {fileID: 21300000, guid: 40df11f0e7d3c674e83e5c4871723968, type: 3}
+  back: {fileID: 21300000, guid: 2dc964bc8fecb4f4787c448d379e4dd3, type: 3}

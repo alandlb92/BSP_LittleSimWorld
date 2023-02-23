@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CustomizationUI : MonoBehaviour
 {
-    [SerializeField] public SkinToneCustomizePanel skinToneCustomizePanel;
-    [SerializeField] public EyeColorCustomizePanel eyeColorCustomizePanel;
-    [SerializeField] public HairColorCustomizePanel hairColorCustomizePanel;
-    [SerializeField] public HairStyleCustomizePanel hairStyleCustomizePanel;
+    [SerializeField] private SkinToneCustomizePanel skinToneCustomizePanel;
+    [SerializeField] private EyeColorCustomizePanel eyeColorCustomizePanel;
+    [SerializeField] private HairColorCustomizePanel hairColorCustomizePanel;
+    [SerializeField] private HairStyleCustomizePanel hairStyleCustomizePanel;
+    [SerializeField] private PantsCustomizePanel pantsCustomizePanel;
 
     public void Configure(ICustomizeCharacter iCustomizeCharacter)
     {
@@ -15,5 +16,6 @@ public class CustomizationUI : MonoBehaviour
         eyeColorCustomizePanel.Initialize(iCustomizeCharacter);
         hairColorCustomizePanel.Initialize(iCustomizeCharacter);
         hairStyleCustomizePanel.Initialize(iCustomizeCharacter);
+        pantsCustomizePanel.Initialize(iCustomizeCharacter);
     }
 }

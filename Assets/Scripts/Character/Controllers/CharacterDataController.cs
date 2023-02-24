@@ -22,6 +22,42 @@ public class CharacterDataController : ICharacterData
         _HUD?.UpdateCoins(_data.coins);
     }
 
+    public void BuyItem(MerchantPantsItens item)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void BuyItem(MerchantShirtItens item)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void BuyItem(MerchantShoesItens item)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool CanTrade(StoreUI.ItemOption storeItemSelected)
+    {
+        throw new NotImplementedException();
+    }
+
+
+    public void SellItem(MerchantPantsItens item)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SellItem(MerchantShirtItens item)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SellItem(MerchantShoesItens item)
+    {
+        throw new NotImplementedException();
+    }
+
     public CharacterData GetData()
     {
         return _data;

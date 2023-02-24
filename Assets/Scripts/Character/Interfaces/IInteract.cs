@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IInteract
 {
-    void Interact(CharacterComponent characterComponent, IDialog iDialog);
+    void Interact(CharacterComponent characterComponent, IPlayerInteraction IPlayerInteraction);
 }

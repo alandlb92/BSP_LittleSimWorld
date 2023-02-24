@@ -16,7 +16,8 @@ public enum DialogEventType
 {
     NONE = 0,
     GIVE_MONEY_TO_OTHER = 1,
-    ADD_MONEY_SELF = 2
+    ADD_MONEY_SELF = 2,
+    OPEN_STORE = 3
 }
 
 [Serializable]

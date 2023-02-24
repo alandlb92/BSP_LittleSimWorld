@@ -1,24 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerInteractionController
+public class PlayerInteractionController : IPlayerInteraction
 {
-    [SerializeField] private CharacterComponent _characterComponent;
-
     private float _interactionDistance;
-    
-    private IInteract _iInteract;
+
+    private IInteract _CurrentiInteract;
+ 
+    private IDialog _iDialog;
+    private IStore _iStore;
+    private ICharacterData _iCharacterData;
 
     public Vector2 _startPosition;
     public Vector2 _endPosition;
 
-    public IInteract Interactable => _iInteract;
-
-    public PlayerInteractionController(float interactionDistance)
+    public PlayerInteractionController(float interactionDistance, IDialog iDialog, IStore iStore, ICharacterData icharacterData)
     {
         _interactionDistance = interactionDistance;
+        _iDialog = iDialog;
+        _iStore = iStore;
+        _iCharacterData = icharacterData;
     }
 
     public void Update(Transform transform, Vector2 bodyDirection)
@@ -31,9 +35,29 @@ public class PlayerInteractionController
 
         if (hit.collider != null && hit.collider.GetComponent<DialogInteractionComponent>() != null)
         {
-            _iInteract = hit.collider.GetComponent<DialogInteractionComponent>();
+            _CurrentiInteract = hit.collider.GetComponent<DialogInteractionComponent>();
         }
         else
-            _iInteract = null;
+            _CurrentiInteract = null;
+    }
+
+    public void TryToInteract(CharacterComponent characterComponent)
+    {
+        _CurrentiInteract?.Interact(characterComponent, this);
+    }
+
+    public IDialog GetIDialog()
+    {
+        return _iDialog;
+    }
+
+    public IStore GetIStore()
+    {
+        return _iStore;
+    }
+
+    public ICharacterData GetIData()
+    {
+        return _iCharacterData;
     }
 }

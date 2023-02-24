@@ -11,20 +11,24 @@ public class UIManager : MonoBehaviour
     [SerializeField] private CustomizationUI CustomizationUI_Referece;
     [SerializeField] private DialogUI DialogUI_Reference;
     [SerializeField] private InventoryUI InventoryUI_Reference;
+    [SerializeField] private StoreUI StoreUI_Reference;
 
     [Header("References")]
     [SerializeField] private Canvas _mainCanvas;
 
     private DialogController _dialogController;
     private InventoryController _inventoryController;
+    private StoreController _storeController;
 
     public IDialog IDialog => _dialogController;
     public IInventory IInventory => _inventoryController;
+    public IStore IStore => _storeController;
 
-    public void ConfigurePlayerUIS(IGameplayInput _input, ICustomizeCharacter _iCustomize)
+    public void ConfigurePlayerUIS(IGameplayInput _input, ICustomizeCharacter _iCustomize, ICharacterData _iData)
     {        
         _dialogController = new DialogController(Instantiate(DialogUI_Reference, _mainCanvas.transform), _input);
         _inventoryController = new InventoryController(Instantiate(InventoryUI_Reference, _mainCanvas.transform), _iCustomize, _input);
+        _storeController = new StoreController(Instantiate(StoreUI_Reference, _mainCanvas.transform), _iData);
     }
 
     private void Update()

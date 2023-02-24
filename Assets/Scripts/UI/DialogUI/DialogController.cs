@@ -76,29 +76,30 @@ public class DialogController : IDialog
         _ui.ChangeText(toPrint);
         _timeBetweenChar = _ui.TimeBetweenCharacters;
 
-        for (int i = 0; i < words.Length; i++)
-        {
-            foreach (char c in words[i])
+        if (_currentDialogNode.text.Length > 0)
+            for (int i = 0; i < words.Length; i++)
             {
-                AddCharAndPrint(c);
+                foreach (char c in words[i])
+                {
+                    AddCharAndPrint(c);
+                    countCharacters++;
+                    yield return new WaitForSeconds(_timeBetweenChar);
+                }
+
+                AddCharAndPrint(' ');
                 countCharacters++;
-                yield return new WaitForSeconds(_timeBetweenChar);
-            }
 
-            AddCharAndPrint(' ');
-            countCharacters++;
-
-            if (i + 1 < words.Length && (words[i + 1].Length + countCharacters) >= _ui.MaxCharactersPerPanel)
-            {
-                yield return Pause();
-                Clear();
+                if (i + 1 < words.Length && (words[i + 1].Length + countCharacters) >= _ui.MaxCharactersPerPanel)
+                {
+                    yield return Pause();
+                    Clear();
+                }
+                else if (i + 1 >= words.Length)
+                {
+                    yield return Pause();
+                    Clear();
+                }
             }
-            else if (i + 1 >= words.Length)
-            {
-                yield return Pause();
-                Clear();
-            }
-        }
 
         Answer answerChoose = null;
         if (_currentDialogNode.answers != null && _currentDialogNode.answers.Count > 0)
@@ -111,6 +112,7 @@ public class DialogController : IDialog
 
             yield return Pause();
         }
+
         if (answerChoose?.dialog != null)
             ShowDialog(answerChoose.dialog);
         else

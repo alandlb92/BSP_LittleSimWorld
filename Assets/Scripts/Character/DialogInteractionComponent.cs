@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class DialogInteractionComponent : MonoBehaviour, IInteract
 {
-    [SerializeField] private CharacterComponent _self;
+    [SerializeField] protected CharacterComponent _self;
+    protected IPlayerInteraction _playerInteraction;
 
     [SerializeField] private string _name;
     [SerializeField] private DialogData _dialog;
-    private CharacterComponent _interactingCharacter;
 
     private void Awake()
     {
         _dialog.EventMaster = EventMaster;
     }
 
-    private void EventMaster(DialogEvent dialogEvent)
+    protected virtual void EventMaster(DialogEvent dialogEvent)
     {
         switch(dialogEvent.type)
         {
@@ -31,16 +31,16 @@ public class DialogInteractionComponent : MonoBehaviour, IInteract
         }
     }
 
-    public void Interact(CharacterComponent characterComponent, IDialog iDialog)
+    public void Interact(CharacterComponent characterComponent, IPlayerInteraction playerInteraction)
     {
-        _interactingCharacter = characterComponent;
-        iDialog.ShowDialog(_dialog);
+        _playerInteraction = playerInteraction;
+        playerInteraction.GetIDialog().ShowDialog(_dialog);
     }
 
     private void GiveMoneyToOther(int amount)
     {
         Debug.Log("GIVE MONE => " + amount);
-        _interactingCharacter.IData.AddCoins(amount);
+        _playerInteraction.GetIData().AddCoins(amount);
     }
 
     private void AddMoneySelf(int amount)

@@ -50,6 +50,7 @@ public class CharacterComponent : MonoBehaviour
     public ICharacterInventory IInvetory => _inventoryController;
     public ICustomizeCharacter ICustomize => _customizeController;
     public IPlayerCamera ICamera => _cameraController;
+    public IGameplayInput IInput => _input as PlayerInput;
 
     private void Awake()
     {
@@ -72,19 +73,15 @@ public class CharacterComponent : MonoBehaviour
 
         _inventoryController = new CharacterInventoryController(_Hud);
         _input?.SetUp(_movementController);
-
-        if (_input is PlayerInput)
-        {
-            _interactionController = new PlayerInteractionController(interactionDistance);
-            (_input as PlayerInput).OnInteract += () => { _interactionController.Interactable?.Interact(this); };
-            _cameraController = new PlayerCameraController(PlayerCamera);
-        }
     }
 
-    public void InitializePlayer(Transform hudParent, Vector3 startPosition)
+    public void InitializePlayer(Transform hudParent, Vector3 startPosition, IDialog iDialog)
     {
         SetHUDParent(hudParent);
         transform.position = startPosition;
+        _interactionController = new PlayerInteractionController(interactionDistance);
+        (_input as PlayerInput).OnInteract += () => { _interactionController.Interactable?.Interact(this, iDialog); };
+        _cameraController = new PlayerCameraController(PlayerCamera);
     }
 
     private void SetHUDParent(Transform mainCanvas)
@@ -92,7 +89,7 @@ public class CharacterComponent : MonoBehaviour
         if (_Hud != null)
         {
             if (mainCanvas != null)
-                _Hud.transform.parent = mainCanvas;
+                _Hud.transform.SetParent(mainCanvas);
         }
 
     }
@@ -101,16 +98,6 @@ public class CharacterComponent : MonoBehaviour
     {
         _animationController.Update();
         _interactionController?.Update(transform, GetBodyDirection());
-    }
-
-    public void DisableInput()
-    {
-        _input.enabled = false;
-    }
-
-    public void EnableInput()
-    {
-        _input.enabled = true;
     }
 
     public Vector3 GetBodyDirection()
@@ -131,8 +118,11 @@ public class CharacterComponent : MonoBehaviour
             bodyFront != null &&
             bodySide != null)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + GetBodyDirection() * interactionDistance);
+            if (_interactionController != null)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(_interactionController._startPosition, _interactionController._endPosition);
+            }
         }
     }
 }

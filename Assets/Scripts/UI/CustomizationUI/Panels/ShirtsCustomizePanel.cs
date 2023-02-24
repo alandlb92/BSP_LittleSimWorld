@@ -24,7 +24,7 @@ public class ShirtsCustomizePanel : MonoBehaviour
             OptionsContainer.AddToGroup(button);
         }
 
-        OptionsContainer.SelectedByIndex(0);
+        OptionsContainer.SelectByIndex(0);
     }
 
 

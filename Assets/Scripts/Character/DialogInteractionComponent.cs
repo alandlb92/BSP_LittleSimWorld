@@ -10,18 +10,40 @@ public class DialogInteractionComponent : MonoBehaviour, IInteract
     [SerializeField] private DialogData _dialog;
     private CharacterComponent _interactingCharacter;
 
-    public void Interact(CharacterComponent characterComponent)
+    private void Awake()
     {
-        _interactingCharacter = characterComponent;
-        Debug.Log("CALL DIALOG INTERACTION");
+        _dialog.EventMaster = EventMaster;
     }
 
-    public void GiveMoneyToOther(int amount)
+    private void EventMaster(DialogEvent dialogEvent)
     {
+        switch(dialogEvent.type)
+        {
+            case DialogEventType.ADD_MONEY_SELF:
+                AddMoneySelf(dialogEvent.intParam);
+                break;
+            case DialogEventType.GIVE_MONEY_TO_OTHER:
+                GiveMoneyToOther(dialogEvent.intParam);
+                break;
+            case DialogEventType.NONE:
+            default:
+                break;
+        }
+    }
+
+    public void Interact(CharacterComponent characterComponent, IDialog iDialog)
+    {
+        _interactingCharacter = characterComponent;
+        iDialog.ShowDialog(_dialog);
+    }
+
+    private void GiveMoneyToOther(int amount)
+    {
+        Debug.Log("GIVE MONE => " + amount);
         _interactingCharacter.IInvetory.AddCoins(amount);
     }
 
-    public void AddMoneySelf(int amount)
+    private void AddMoneySelf(int amount)
     {
         _self.IInvetory.AddCoins(amount);
     }

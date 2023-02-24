@@ -5,21 +5,38 @@ using UnityEngine.Events;
 
 
 [Serializable]
+public struct DialogEvent
+{
+    public DialogEventType type;
+    public int intParam;
+}
+
+[Serializable]
+public enum DialogEventType
+{
+    NONE = 0,
+    GIVE_MONEY_TO_OTHER = 1,
+    ADD_MONEY_SELF = 2
+}
+
+[Serializable]
 public class DialogData
 {
     public DialogNode Dialog;
+    public Action<DialogEvent> EventMaster;
 }
 
 [Serializable]
-public struct DialogNode
+public class DialogNode
 {
     public string text;
     public List<Answer> answers;
-    public UnityEvent actions;
+    public DialogEvent Event;
+    //public UnityEvent actions; this version of unity have problemas with nested events
 }
 
 [Serializable]
-public struct Answer
+public class Answer
 {
     public string text;
     public DialogNode dialog;

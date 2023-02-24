@@ -7,8 +7,8 @@ EditorSettings:
   m_SerializationMode: 2
   m_LineEndingsForNewScripts: 0
   m_DefaultBehaviorMode: 1
-  m_PrefabRegularEnvironment: {fileID: 0}
-  m_PrefabUIEnvironment: {fileID: 0}
+  m_PrefabRegularEnvironment: {fileID: 102900000, guid: 0f31681bc8e17c148b0978da8542f8c9, type: 3}
+  m_PrefabUIEnvironment: {fileID: 102900000, guid: 0f31681bc8e17c148b0978da8542f8c9, type: 3}
   m_SpritePackerMode: 4
   m_SpritePackerPaddingPower: 1
   m_Bc7TextureCompressor: 0
@@ -32,6 +32,7 @@ EditorSettings:
   m_SerializeInlineMappingsOnOneLine: 1
   m_DisableCookiesInLightmapper: 1
   m_AssetPipelineMode: 1
+  m_RefreshImportMode: 0
   m_CacheServerMode: 0
   m_CacheServerEndpoint: 
   m_CacheServerNamespacePrefix: default

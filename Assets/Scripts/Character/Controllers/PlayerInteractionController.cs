@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerInteractionController
@@ -10,6 +11,9 @@ public class PlayerInteractionController
     
     private IInteract _iInteract;
 
+    public Vector2 _startPosition;
+    public Vector2 _endPosition;
+
     public IInteract Interactable => _iInteract;
 
     public PlayerInteractionController(float interactionDistance)
@@ -17,16 +21,19 @@ public class PlayerInteractionController
         _interactionDistance = interactionDistance;
     }
 
-    public void Update(Transform transform, Vector3 bodyDirection)
+    public void Update(Transform transform, Vector2 bodyDirection)
     {
-        Vector3 _startPosition = transform.position;
-        Vector3 _endPosition = _startPosition + bodyDirection * _interactionDistance;
+        _startPosition = transform.position;
+        _endPosition = _startPosition + bodyDirection * _interactionDistance;
 
-        RaycastHit2D hit = Physics2D.Linecast(_startPosition, _endPosition);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(_startPosition, bodyDirection, _interactionDistance);
+        RaycastHit2D hit = hits.Where(x => x.collider != null && !x.collider.CompareTag("Player")).FirstOrDefault();
 
-        if(hit.collider != null && hit.collider.GetComponent<DialogInteractionComponent>() != null)
+        if (hit.collider != null && hit.collider.GetComponent<DialogInteractionComponent>() != null)
         {
             _iInteract = hit.collider.GetComponent<DialogInteractionComponent>();
         }
+        else
+            _iInteract = null;
     }
 }

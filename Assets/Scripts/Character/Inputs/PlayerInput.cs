@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInput : InputBase
+public class PlayerInput : InputBase, IGameplayInput
 {
     struct InputAxisVectorInfo
     {
@@ -24,20 +24,30 @@ public class PlayerInput : InputBase
         {
             return Vector2.ClampMagnitude(new Vector2(x, y), 1);
         }
-    }
 
-    private InputAxisVectorInfo _inputAxis;
+        public void Clear()
+        {
+            x = 0;
+            y = 0; 
+        }
+    }
 
     public event Action OnInteract;
 
+    private InputAxisVectorInfo _inputAxis;
+
+    private bool active = true;
+
     public void Update()
     {
+        if (!active)
+            return;
+
         SetInputInfo();
         _iMovement.Move(_inputAxis.GetValue());
-
-        if(Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit"))
         {
-            OnInteract?.Invoke();
+            OnInteract.Invoke();
         }
     }
 
@@ -45,5 +55,16 @@ public class PlayerInput : InputBase
     {
         _inputAxis.SetX(Input.GetAxisRaw("Horizontal"));
         _inputAxis.SetY(Input.GetAxisRaw("Vertical"));
+    }
+
+    public void EnableInput()
+    {
+        active = true;
+    }
+
+    public void DisableInput()
+    {
+        active = false;
+        _inputAxis.Clear();
     }
 }

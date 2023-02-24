@@ -27,17 +27,18 @@ public class GameManager : MonoBehaviour, IStartOptions
 
     public void StartGame()
     {
-        _player = Instantiate(PlayerPrefab_Referece, _gameStartPoint);
-        _player.ICamera.SetCameraDistance(3);
-        _player.DisableInput();
-        _player.InitializePlayer(_uiManager?.GetCanvasTransform(), _gameStartPoint.position);
+        _player = Instantiate(PlayerPrefab_Referece, _gameStartPoint.position, _gameStartPoint.rotation);
         _startCamera.gameObject.SetActive(false);
         _uiManager?.ShowCustomizeUI(_player.ICustomize, ReadyToPlay);
+        _uiManager?.ConfigurePlayerUIS(_player.IInput);
+        _player.InitializePlayer(_uiManager?.GetCanvasTransform(), _gameStartPoint.position, _uiManager.IDialog);
+        _player.ICamera.SetCameraDistance(3);
+        _player.IInput.DisableInput();
     }
 
     public void ReadyToPlay()
     {
-        _player.EnableInput();
+        _player.IInput.EnableInput();
         _player.ICamera.SetCameraDistance(6);
     }
 }

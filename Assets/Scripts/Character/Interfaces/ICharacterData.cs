@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ICharacterInventory
+public interface ICharacterData
 {
     void AddCoins(int value);
 }

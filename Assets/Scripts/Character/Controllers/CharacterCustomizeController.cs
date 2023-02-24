@@ -6,6 +6,10 @@ public class CharacterCustomizeController : ICustomizeCharacter
 {
 
     private CustomizableSpritesContainer _customizableSprites;
+    private ShirtItem _currentShirt;
+    private PantsItem _currentPants;
+    private ShoesItem _currentShoes;
+
 
     public CharacterCustomizeController(CustomizableSpritesContainer customizableSprites)
     {
@@ -55,6 +59,8 @@ public class CharacterCustomizeController : ICustomizeCharacter
 
     public void ChangePants(PantsItem pants)
     {
+        _currentPants = pants;
+
         _customizableSprites.pantFront.sprite = pants.front;
         _customizableSprites.pantLeftLegSide.sprite = pants.side;
         _customizableSprites.pantRightLegSide.sprite = pants.side;
@@ -63,6 +69,8 @@ public class CharacterCustomizeController : ICustomizeCharacter
 
     public void ChangeShirt(ShirtItem shirt)
     {
+        _currentShirt = shirt;
+
         _customizableSprites.shirtBodyFront.sprite = shirt.front;
         _customizableSprites.shirtBodySide.sprite = shirt.side;
         _customizableSprites.shirtBodyBack.sprite = shirt.back;
@@ -77,13 +85,30 @@ public class CharacterCustomizeController : ICustomizeCharacter
         _customizableSprites.shirtRightSleeveBack.sprite = shirt.sleeve;
     }
 
-    public void ChangeShoes(ShoesItem option)
+    public void ChangeShoes(ShoesItem shoes)
     {
-        _customizableSprites.shoesLeftLegFront.sprite = option.front;
-        _customizableSprites.shoesRightLegFront.sprite = option.front;
-        _customizableSprites.shoesLeftLegSide.sprite = option.side;
-        _customizableSprites.shoesRightLegSide.sprite = option.side;
-        _customizableSprites.shoesLeftLegBack.sprite = option.back;
-        _customizableSprites.shoesRightLegBack.sprite = option.back;
+        _currentShoes = shoes;
+
+        _customizableSprites.shoesLeftLegFront.sprite = shoes.front;
+        _customizableSprites.shoesRightLegFront.sprite = shoes.front;
+        _customizableSprites.shoesLeftLegSide.sprite = shoes.side;
+        _customizableSprites.shoesRightLegSide.sprite = shoes.side;
+        _customizableSprites.shoesLeftLegBack.sprite = shoes.back;
+        _customizableSprites.shoesRightLegBack.sprite = shoes.back;
+    }
+
+    public ShirtItem GetCurrentShirt()
+    {
+        return _currentShirt;
+    }
+
+    public PantsItem GetCurrentPants()
+    {
+        return _currentPants;
+    }
+
+    public ShoesItem GetCurrentShoes()
+    {
+        return _currentShoes;
     }
 }

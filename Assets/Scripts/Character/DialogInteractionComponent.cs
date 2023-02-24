@@ -40,11 +40,11 @@ public class DialogInteractionComponent : MonoBehaviour, IInteract
     private void GiveMoneyToOther(int amount)
     {
         Debug.Log("GIVE MONE => " + amount);
-        _interactingCharacter.IInvetory.AddCoins(amount);
+        _interactingCharacter.IData.AddCoins(amount);
     }
 
     private void AddMoneySelf(int amount)
     {
-        _self.IInvetory.AddCoins(amount);
+        _self.IData.AddCoins(amount);
     }
 }

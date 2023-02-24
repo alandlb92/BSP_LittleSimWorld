@@ -33,10 +33,12 @@ public class PlayerInput : InputBase, IGameplayInput
     }
 
     public event Action OnInteract;
+    public event Action OnOpenInventory;
 
     private InputAxisVectorInfo _inputAxis;
 
     private bool active = true;
+
 
     public void Update()
     {
@@ -48,6 +50,11 @@ public class PlayerInput : InputBase, IGameplayInput
         if (Input.GetButtonDown("Submit"))
         {
             OnInteract.Invoke();
+        }
+
+        if(Input.GetButtonDown("Open Inventory"))
+        {
+            OnOpenInventory.Invoke();
         }
     }
 

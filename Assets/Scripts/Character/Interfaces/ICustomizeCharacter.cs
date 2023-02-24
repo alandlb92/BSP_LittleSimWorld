@@ -11,4 +11,9 @@ public interface ICustomizeCharacter
     void ChangePants(PantsItem pants);
     void ChangeShirt(ShirtItem option);
     void ChangeShoes(ShoesItem option);
+    ShirtItem GetCurrentShirt();
+    PantsItem GetCurrentPants();
+    ShoesItem GetCurrentShoes();
+
+
 }

@@ -42,12 +42,14 @@ public class CharacterComponent : MonoBehaviour
     private CharacterCustomizeController _customizeController;
     private CharacterAnimationController _animationController;
     private CharacterMovementController _movementController;
-    private CharacterInventoryController _inventoryController;
+    private CharacterDataController _dataController;
     private PlayerInteractionController _interactionController;
     private PlayerHUD _Hud;
     private PlayerCameraController _cameraController;
 
-    public ICharacterInventory IInvetory => _inventoryController;
+    public ICharacterData IData => _dataController;
+
+
     public ICustomizeCharacter ICustomize => _customizeController;
     public IPlayerCamera ICamera => _cameraController;
     public IGameplayInput IInput => _input as PlayerInput;
@@ -71,17 +73,24 @@ public class CharacterComponent : MonoBehaviour
 
         _customizeController = new CharacterCustomizeController(_customizableSprites);
 
-        _inventoryController = new CharacterInventoryController(_Hud);
+        _dataController = new CharacterDataController(_Hud);
         _input?.SetUp(_movementController);
     }
 
-    public void InitializePlayer(Transform hudParent, Vector3 startPosition, IDialog iDialog)
+    public void InitializePlayer(Transform hudParent, Vector3 startPosition, IDialog iDialog, IInventory inventory)
     {
         SetHUDParent(hudParent);
         transform.position = startPosition;
         _interactionController = new PlayerInteractionController(interactionDistance);
         (_input as PlayerInput).OnInteract += () => { _interactionController.Interactable?.Interact(this, iDialog); };
+        (_input as PlayerInput).OnOpenInventory += () => { inventory.Open(_dataController.GetData()); };
         _cameraController = new PlayerCameraController(PlayerCamera);
+    }
+
+
+    public void SetInitializeData()
+    {
+        _dataController.SetInitializeData(ICustomize.GetCurrentShirt(), ICustomize.GetCurrentPants(), ICustomize.GetCurrentShoes());
     }
 
     private void SetHUDParent(Transform mainCanvas)

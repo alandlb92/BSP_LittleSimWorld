@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdafda0fec8c2b443b33e16e90c4a05b, type: 3}
   m_Name: PantsItem2
   m_EditorClassIdentifier: 
-  thumb: {fileID: 21300000, guid: f0174ecaf5de2294c8e86547549e6907, type: 3}
+  thumb: {fileID: 21300000, guid: 64371f6cb2caaa743a1c6dd0cba01f60, type: 3}
   front: {fileID: 21300000, guid: f0174ecaf5de2294c8e86547549e6907, type: 3}
-  left: {fileID: 21300000, guid: 40df11f0e7d3c674e83e5c4871723968, type: 3}
+  side: {fileID: 21300000, guid: 40df11f0e7d3c674e83e5c4871723968, type: 3}
   back: {fileID: 21300000, guid: 2dc964bc8fecb4f4787c448d379e4dd3, type: 3}

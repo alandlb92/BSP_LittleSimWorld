@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thumb: {fileID: 21300000, guid: f035035d8b30219469a281ce0dc94478, type: 3}
   front: {fileID: 21300000, guid: a7b937e7c025a344881f1865b3e82509, type: 3}
-  left: {fileID: 21300000, guid: 75b21b2f4b192c54bbf6504afe348de6, type: 3}
+  side: {fileID: 21300000, guid: 75b21b2f4b192c54bbf6504afe348de6, type: 3}
   back: {fileID: 21300000, guid: 2dfa36254eb83164b869ceefffa8ae05, type: 3}

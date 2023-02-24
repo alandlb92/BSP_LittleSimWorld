@@ -7,6 +7,6 @@ public class ShoesItem : ScriptableObject
 {
     public Sprite thumb;
     public Sprite front;
-    public Sprite left;
+    public Sprite side;
     public Sprite back;
 }

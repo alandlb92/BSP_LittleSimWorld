@@ -9,4 +9,6 @@ public interface ICustomizeCharacter
     void ChangeEyeColor(float h, float s, float v);
     void ChangeHairStyle(HairStyleItem hairStyle);
     void ChangePants(PantsItem pants);
+    void ChangeShirt(ShirtItem option);
+    void ChangeShoes(ShoesItem option);
 }

@@ -60,4 +60,30 @@ public class CharacterCustomizeController : ICustomizeCharacter
         _customizableSprites.pantRightLegSide.sprite = pants.side;
         _customizableSprites.pantsBack.sprite = pants.back;
     }
+
+    public void ChangeShirt(ShirtItem shirt)
+    {
+        _customizableSprites.shirtBodyFront.sprite = shirt.front;
+        _customizableSprites.shirtBodySide.sprite = shirt.side;
+        _customizableSprites.shirtBodyBack.sprite = shirt.back;
+
+        _customizableSprites.shirtLeftSleeveFront.sprite = shirt.sleeve;
+        _customizableSprites.shirtRightSleeveFront.sprite = shirt.sleeve;
+
+        _customizableSprites.shirtLeftSleeveSide.sprite = shirt.sleeve;
+        _customizableSprites.shirtRightSleeveSide.sprite = shirt.sleeve;
+
+        _customizableSprites.shirtLeftSleeveBack.sprite = shirt.sleeve;
+        _customizableSprites.shirtRightSleeveBack.sprite = shirt.sleeve;
+    }
+
+    public void ChangeShoes(ShoesItem option)
+    {
+        _customizableSprites.shoesLeftLegFront.sprite = option.front;
+        _customizableSprites.shoesRightLegFront.sprite = option.front;
+        _customizableSprites.shoesLeftLegSide.sprite = option.side;
+        _customizableSprites.shoesRightLegSide.sprite = option.side;
+        _customizableSprites.shoesLeftLegBack.sprite = option.back;
+        _customizableSprites.shoesRightLegBack.sprite = option.back;
+    }
 }

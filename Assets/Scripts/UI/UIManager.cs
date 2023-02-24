@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,9 +18,9 @@ public class UIManager : MonoBehaviour
         Instantiate(StartUI_Referece, _mainCanvas.transform).Configure(IStartOptions);
     }
 
-    public void ShowCustomizeUI(ICustomizeCharacter ICustomize)
+    public void ShowCustomizeUI(ICustomizeCharacter ICustomize, Action onReady)
     {
-        Instantiate(CustomizationUI_Referece, _mainCanvas.transform).Configure(ICustomize);
+        Instantiate(CustomizationUI_Referece, _mainCanvas.transform).Configure(ICustomize, onReady);
     }
 
     public Transform GetCanvasTransform()

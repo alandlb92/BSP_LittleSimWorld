@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +9,6 @@ public class CharacterComponent : MonoBehaviour
     [SerializeField] private PlayerHUD PlayerHud_Reference;
 
     [Space]
-    [Header("Interaction")]
-    [SerializeField] private float interactionDistance;
-
-    [Space]
     [Header("Physics")]
     [SerializeField] private float velocityMultiply;
     [SerializeField] private Rigidbody2D rBody;
@@ -19,13 +16,26 @@ public class CharacterComponent : MonoBehaviour
     [Space]
     [Header("Animation")]
     [SerializeField] private Animator animator;
-    [SerializeField] private InputBase _input;
     [SerializeField] private GameObject bodyFront;
     [SerializeField] private GameObject bodySide;
     [SerializeField] private GameObject bodyBack;
 
     [Space]
     [SerializeField] private CustomizableSpritesContainer _customizableSprites;
+
+    [Space]
+    [Header("INPUT")]
+    [Space]
+    [SerializeField] private InputBase _input;
+
+    [Space]
+    [Header("PLAYER")]
+    [Space]
+    [Header("Interaction")]
+    [SerializeField] private float interactionDistance;
+    [Space]
+    [Header("Camera")]
+    [SerializeField] private Camera PlayerCamera;
 
 
 
@@ -35,9 +45,11 @@ public class CharacterComponent : MonoBehaviour
     private CharacterInventoryController _inventoryController;
     private PlayerInteractionController _interactionController;
     private PlayerHUD _Hud;
+    private PlayerCameraController _cameraController;
 
     public ICharacterInventory IInvetory => _inventoryController;
     public ICustomizeCharacter ICustomize => _customizeController;
+    public IPlayerCamera ICamera => _cameraController;
 
     private void Awake()
     {
@@ -65,6 +77,7 @@ public class CharacterComponent : MonoBehaviour
         {
             _interactionController = new PlayerInteractionController(interactionDistance);
             (_input as PlayerInput).OnInteract += () => { _interactionController.Interactable?.Interact(this); };
+            _cameraController = new PlayerCameraController(PlayerCamera);
         }
     }
 
@@ -88,6 +101,16 @@ public class CharacterComponent : MonoBehaviour
     {
         _animationController.Update();
         _interactionController?.Update(transform, GetBodyDirection());
+    }
+
+    public void DisableInput()
+    {
+        _input.enabled = false;
+    }
+
+    public void EnableInput()
+    {
+        _input.enabled = true;
     }
 
     public Vector3 GetBodyDirection()

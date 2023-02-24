@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
     {        
         _dialogController = new DialogController(Instantiate(DialogUI_Reference, _mainCanvas.transform), _input);
         _inventoryController = new InventoryController(Instantiate(InventoryUI_Reference, _mainCanvas.transform), _iCustomize, _input);
-        _storeController = new StoreController(Instantiate(StoreUI_Reference, _mainCanvas.transform), _iData);
+        _storeController = new StoreController(Instantiate(StoreUI_Reference, _mainCanvas.transform), _iData, _input);
     }
 
     private void Update()

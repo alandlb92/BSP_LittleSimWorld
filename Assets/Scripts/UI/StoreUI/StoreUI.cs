@@ -35,6 +35,10 @@ public class StoreUI : MonoBehaviour
     [SerializeField] private Button _tradeButton;
     [SerializeField] private TMP_Text _tradeButtonText;
 
+    [SerializeField] private Button _exit;
+
+    public event Action OnClose;
+
     public event Action OnTrade;
 
     private void Start()
@@ -49,6 +53,7 @@ public class StoreUI : MonoBehaviour
             _tradeButtonText.text = "SELL";
             _sellGroup.SelectByIndex(0);
         };
+        _exit.onClick.AddListener(Hide);
     }
 
     public void ShowStore(Model model, Action<StoreUI.ItemOption> onSelect)
@@ -62,7 +67,7 @@ public class StoreUI : MonoBehaviour
             btn.AddListener(() => { 
                 onSelect.Invoke(item);
             });
-            btn.SetSprite(item.thumb);
+            btn.SetSprite(item.thumb, item.price);
             selectableButtonGroup.AddToGroup(btn);
         }
 
@@ -75,6 +80,7 @@ public class StoreUI : MonoBehaviour
         _pivot?.SetActive(false);
         _buyGroup.Clear();
         _sellGroup.Clear();
+        OnClose?.Invoke();
     }
 
     public void UpdateTradeButton(bool canTrade)

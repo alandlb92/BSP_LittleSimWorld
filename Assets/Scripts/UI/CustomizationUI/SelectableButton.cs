@@ -11,7 +11,8 @@ public class SelectableButton : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private Image _selectableBorder;
     [SerializeField] private TMP_Text _text;
-    
+    [SerializeField] private TMP_Text _price;
+
     private SelectableButtonGroup _group;
     public void SetGroupParent(SelectableButtonGroup group)
     {
@@ -44,6 +45,12 @@ public class SelectableButton : MonoBehaviour
     public void SetSprite(Sprite thumb)
     {
         _button.image.sprite = thumb;
+    }
+
+    public void SetSprite(Sprite thumb, int price)
+    {
+        _button.image.sprite = thumb;
+        _price.text = price.ToString() + "$";
     }
 
     public void SetText(string text)

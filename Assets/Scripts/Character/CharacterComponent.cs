@@ -73,7 +73,7 @@ public class CharacterComponent : MonoBehaviour
 
         _customizeController = new CharacterCustomizeController(_customizableSprites);
 
-        _dataController = new CharacterDataController(_Hud);
+        _dataController = new CharacterDataController(_Hud, _customizeController);
         _input?.SetUp(_movementController);
     }
 

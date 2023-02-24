@@ -34,6 +34,7 @@ public class PlayerInput : InputBase, IGameplayInput
 
     public event Action OnInteract;
     public event Action OnOpenInventory;
+    public event Action OnRequestExit;
 
     private InputAxisVectorInfo _inputAxis;
 
@@ -55,6 +56,11 @@ public class PlayerInput : InputBase, IGameplayInput
         if(Input.GetButtonDown("Open Inventory"))
         {
             OnOpenInventory.Invoke();
+        }
+
+        if(Input.GetButtonDown("Exit Request"))
+        {
+            OnRequestExit.Invoke();
         }
     }
 

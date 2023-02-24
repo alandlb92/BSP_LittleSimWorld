@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour, IStartOptions
         _startCamera.gameObject.SetActive(false);
         _uiManager?.ShowCustomizeUI(_player.ICustomize, ReadyToPlay);
         _uiManager?.ConfigurePlayerUIS(_player.IInput, _player.ICustomize, _player.IData);
-        _player.InitializePlayer(_uiManager?.GetCanvasTransform(), _gameStartPoint.position, _uiManager.IDialog, _uiManager.IInventory, _uiManager.IStore);
+        _player.InitializePlayer(_uiManager?.GetCanvasTransform(), _gameStartPoint.position, _uiManager.IDialog, _uiManager.IInventory, _uiManager.IStore, _uiManager.IExitScreen);
         _player.ICamera.SetCameraDistance(3);
         _player.IInput.DisableInput();
     }

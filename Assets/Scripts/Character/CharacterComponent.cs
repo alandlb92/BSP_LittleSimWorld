@@ -77,13 +77,14 @@ public class CharacterComponent : MonoBehaviour
         _input?.SetUp(_movementController);
     }
 
-    public void InitializePlayer(Transform hudParent, Vector3 startPosition, IDialog iDialog, IInventory iInventory, IStore iStore)
+    public void InitializePlayer(Transform hudParent, Vector3 startPosition, IDialog iDialog, IInventory iInventory, IStore iStore, IExitScreen exitScreen)
     {
         SetHUDParent(hudParent);
         transform.position = startPosition;
         _interactionController = new PlayerInteractionController(interactionDistance, iDialog, iStore, IData);
         (_input as PlayerInput).OnInteract += () => { _interactionController.TryToInteract(this); };
         (_input as PlayerInput).OnOpenInventory += () => { iInventory.Open(_dataController.GetData()); };
+        (_input as PlayerInput).OnRequestExit += exitScreen.Open;
         _cameraController = new PlayerCameraController(PlayerCamera);
     }
 
